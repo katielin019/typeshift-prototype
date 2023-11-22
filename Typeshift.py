@@ -19,7 +19,6 @@ def game():
         x = input('Enter the letters (no spaces between) in column ' + str(puzzle.index) + ' or press enter/return to finish: ')
         if len(x) == 0:
             # https://stackoverflow.com/questions/52231554/blank-input-in-python
-            puzzle.index -= 1
             initialized = True
         else:
             # https://www.freecodecamp.org/news/python-string-to-array-how-to-convert-text-to-a-list/
