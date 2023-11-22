@@ -38,7 +38,8 @@ def game():
         if valid == True:
             candidates.append(word)
     
-    print(candidates)
+    # print(candidates)
+    displaySolutions(candidates)
     
 
 def loadWords(target):
@@ -47,9 +48,15 @@ def loadWords(target):
     with open('dict.txt', 'r') as f:
         for line in f:
             # word = line[1:-1].upper()
+            word = line.strip()
             if len(word) == target:
                 words.append(word)
     return words
+
+def displaySolutions(arr):
+    for elem in arr:
+        print(elem)
+
 
 def main():
     game()
