@@ -44,9 +44,9 @@ def game():
 def loadWords(target):
     words = []
     # https://stackoverflow.com/questions/70426424/convert-text-file-into-array
-    with open('wordlist-20210729.txt', 'r') as f:
+    with open('dict.txt', 'r') as f:
         for line in f:
-            word = line[1:-1].upper()
+            # word = line[1:-1].upper()
             if len(word) == target:
                 words.append(word)
     return words
