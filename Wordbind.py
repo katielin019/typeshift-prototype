@@ -31,7 +31,6 @@ def game():
     wordbinds = []
 
     for word in words:
-        ordered = True
         letters = list(word)
         indexes = []
 
