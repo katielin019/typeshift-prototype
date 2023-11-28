@@ -21,10 +21,13 @@ def game():
         if len(x) == 0:
             # https://stackoverflow.com/questions/52231554/blank-input-in-python
             initialized = True
-        else:
+        elif puzzle.index == 0:
             # https://www.freecodecamp.org/news/python-string-to-array-how-to-convert-text-to-a-list/
             puzzle.rows[puzzle.index] = list(x)
+            puzzle.index += 1
+        else:
             puzzle.rows.append([])
+            puzzle.rows[puzzle.index] = list(x)
             puzzle.index += 1
 
     # call loadWords, which returns a list of words in wordlist that are the same length as puzzle.rows.length   
@@ -34,7 +37,8 @@ def game():
     candidates = []
     for word in words:
         valid = True
-        for i in range(puzzle.index):
+        # for i in range(puzzle.index):
+        for i in range(len(puzzle.rows)):
             if word[i] not in puzzle.rows[i]:
                 valid = False
         if valid == True:
@@ -63,23 +67,30 @@ def displaySolutions(arr):
         print(elem)
 
 def analyzeSolutions(candidates, puzzle):
-    frequencies = [[0] * len(puzzle)]
-    for c in range(len(puzzle)):
-        tempDict = {}
-        for let in puzzle[c]:
-            tempDict[let] = 0
-        frequencies[c] = tempDict
+    frequencies = [{}]
+    vals = [[]]
 
-    print(frequencies)
+    for i in range(len(puzzle)):
+        tmp = [0] * len(puzzle[i])
+        vals[i] = tmp
+        if not i == len(puzzle) - 1:
+            vals.append([])
+            frequencies.append({})
+    
+    # print(frequencies)
+    # print(puzzle)
+    # print(vals)
 
-    for word in candidates:
-        letters = list(word)
-        for i in range(len(letters)):
-            letter = letters[i]
-            # loc = puzzle.index(letter)
-            frequencies[i][letter] += 1
+    print(candidates)
 
-    print(frequencies)
+    # for word in candidates:
+    #     letters = list(word)
+    #     for i in range(len(letters)):
+    #         letter = letters[i]
+    #         # loc = puzzle.index(letter)
+    #         frequencies[i][letter] += 1
+
+    # print(frequencies)
 
 
 def main():
