@@ -6,9 +6,10 @@ class Typeshift(object):
         self.rows = [[]]
         self.index = 0
 
-    def addColumn(letters):
-        self.rows[index] = letters
-        self.index += 1
+    # def addColumn(letters):
+    #     self.rows[index] = letters
+    #     self.index += 1
+
 
 def game():
     # wordLen = input('How long is each typeshift word?')
@@ -40,7 +41,8 @@ def game():
             candidates.append(word)
     
     # print(candidates)
-    displaySolutions(candidates)
+    analyzeSolutions(candidates, puzzle.rows)
+    # displaySolutions(candidates)
     
 
 def loadWords(target):
@@ -59,6 +61,25 @@ def displaySolutions(arr):
         print("No solutions found :(")
     for elem in arr:
         print(elem)
+
+def analyzeSolutions(candidates, puzzle):
+    frequencies = [[0] * len(puzzle)]
+    for c in range(len(puzzle)):
+        tempDict = {}
+        for let in puzzle[c]:
+            tempDict[let] = 0
+        frequencies[c] = tempDict
+
+    print(frequencies)
+
+    for word in candidates:
+        letters = list(word)
+        for i in range(len(letters)):
+            letter = letters[i]
+            # loc = puzzle.index(letter)
+            frequencies[i][letter] += 1
+
+    print(frequencies)
 
 
 def main():
