@@ -44,9 +44,10 @@ def game():
         if valid == True:
             candidates.append(word)
     
-    # print(candidates)
-    analyzeSolutions(candidates, puzzle.rows)
+    frequencies = analyzeSolutions(candidates, puzzle.rows)
     # displaySolutions(candidates)
+    for row in frequencies:
+        print(row)
     
 
 def loadWords(target):
@@ -90,6 +91,8 @@ def analyzeSolutions(candidates, keys):
         for k in range(len(letters)):
             currLetter = letters[k]
             frequencies[k][currLetter] += 1
+    
+    return frequencies
 
 
 def main():
