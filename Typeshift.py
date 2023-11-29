@@ -66,31 +66,34 @@ def displaySolutions(arr):
     for elem in arr:
         print(elem)
 
-def analyzeSolutions(candidates, puzzle):
+def analyzeSolutions(candidates, keys):
     frequencies = [{}]
     vals = [[]]
 
-    for i in range(len(puzzle)):
-        tmp = [0] * len(puzzle[i])
+    # Initialize data structures for frequency analysis (1)
+    for i in range(len(keys)):
+        tmp = [0] * len(keys[i])
         vals[i] = tmp
-        if not i == len(puzzle) - 1:
+        if not i == len(keys) - 1:
             vals.append([])
             frequencies.append({})
-    
-    # print(frequencies)
-    # print(puzzle)
-    # print(vals)
 
-    print(candidates)
+    # Initialize data structures for frequency analysis (2)
+    for j in range(len(vals)):
+        tmpDict = dict(zip(keys[j], vals[j]))
+        frequencies[j] = tmpDict
 
-    # for word in candidates:
-    #     letters = list(word)
-    #     for i in range(len(letters)):
-    #         letter = letters[i]
-    #         # loc = puzzle.index(letter)
-    #         frequencies[i][letter] += 1
+    for word in candidates:
+        print(word)
+        letters = list(word)
+        for k in range(len(letters)):
+            currLetter = letters[k]
+            print(str(k) + ": " + currLetter)
+            # letterIndex = keys[k].index(currLetter)
+            # print("letter index: " + str(letterIndex))
+            frequencies[k][currLetter] += 1
 
-    # print(frequencies)
+    print(frequencies)
 
 
 def main():
