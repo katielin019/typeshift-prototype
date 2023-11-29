@@ -60,11 +60,13 @@ def loadWords(target):
                 words.append(word)
     return words
 
+
 def displaySolutions(arr):
     if len(arr) == 0:
         print("No solutions found :(")
     for elem in arr:
         print(elem)
+
 
 def analyzeSolutions(candidates, keys):
     frequencies = [{}]
@@ -84,16 +86,10 @@ def analyzeSolutions(candidates, keys):
         frequencies[j] = tmpDict
 
     for word in candidates:
-        print(word)
         letters = list(word)
         for k in range(len(letters)):
             currLetter = letters[k]
-            print(str(k) + ": " + currLetter)
-            # letterIndex = keys[k].index(currLetter)
-            # print("letter index: " + str(letterIndex))
             frequencies[k][currLetter] += 1
-
-    print(frequencies)
 
 
 def main():
