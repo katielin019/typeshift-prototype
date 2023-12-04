@@ -44,6 +44,8 @@ def game():
         if valid == True:
             candidates.append(word)
     
+    print(candidates)
+    
     frequencies = analyzeSolutions(candidates, puzzle.rows)
     # displaySolutions(candidates)
     for row in frequencies:
