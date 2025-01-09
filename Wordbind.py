@@ -19,12 +19,13 @@ def loadWords(puzzleLetters):
 def displaySolutions(arr):
     if len(arr) == 0:
         print("No solutions found :(")
+    arr.sort(key=len, reverse=True)
     for elem in arr:
         print(elem)
 
 
 def game():
-    puzzle = input('Enter wordbind puzzle word: ')
+    puzzle = input('Enter wordbind puzzle words (with a space in between each word): ')
     puzzleLetters = list(puzzle)
 
     words = loadWords(puzzleLetters)
