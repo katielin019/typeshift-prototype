@@ -48,10 +48,14 @@ def game():
         print(candidate)
     
     frequencies = analyzeSolutions(candidates, puzzle.rows)
-    # displaySolutions(candidates)
     print()
-    for row in frequencies:
-        print(row)
+    for j in range(len(frequencies)):
+        print(frequencies[j])
+        min_key = min(frequencies[j], key=frequencies[j].get)
+        for candidate in candidates:
+            if candidate[j] == min_key:
+                print(candidate)
+
     
 
 def loadWords(target):
