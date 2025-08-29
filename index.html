@@ -9,22 +9,80 @@
 				display: block;
 				max-width: 100%;
 			}
-			.column {
-				width: 2rem;
+
+			main {
+				display: flex;
+				flex-direction: row;
+				flex-grow: 0;
+				gap: 1rem;
+			}
+
+			div.column {
 				display: flex;
 				flex-direction: column;
-				flex-grow: 0;
-				flex-shrink: 1;
+				gap: 1rem;
+			}
+
+			textarea {
+				font-size: 2rem;
+				resize: none;
+				padding: 0.5rem;
+			}
+
+			button#addColumn {
+				height: 100%;
+			}
+
+			.rotated-text {
+				transform: rotate(-90deg);
+				display: inline-block;
 			}
 		</style>
 	</head>
 	<body>
 		<h1>Typeshift solver</h1>
-		<div class="column">
-			<input type="text" size="1">
-			<input type="text" size="1">
-			<input type="text" size="1">
-		</div>
+		<main>
+			<div class="column">
+				<textarea cols="1" rows="1" maxlength="1" autofocus></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+			</div>
+			<div class="column">
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+			</div>
+			<div class="column">
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+			</div>
+			<div class="column">
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+			</div>
+			<div class="column">
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+				<textarea cols="1" rows="1" maxlength="1"></textarea>
+			</div>
+			<div class="column">
+				<button id="addColumn">
+					<span class="rotated-text">add column</span>
+				</button>
+			</div>
+		</main>
 		<!-- <div class="column">
 			<input type="text" size="1">
 			<input type="text" size="1">
