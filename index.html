@@ -3,16 +3,38 @@
 	<head>
 		<meta charset='UTF-8'>
 		<meta name=viewport content='width=device-width, initial-scale=1.0'>
-		<title>typeshift solver</title>
-		<script type=text/javascript src=main.js></script>
+		<title>Typeshift solver</title>
+		<style>
+			img, picture, video, canvas, svg {
+				display: block;
+				max-width: 100%;
+			}
+			.column {
+				width: 2rem;
+				display: flex;
+				flex-direction: column;
+				flex-grow: 0;
+				flex-shrink: 1;
+			}
+		</style>
 	</head>
 	<body>
-		<header>
-			<h1>typeshift solver</h1>
-		</header>
-		<main>
-		</main>
-		<footer>
-		</footer>
+		<h1>Typeshift solver</h1>
+		<div class="column">
+			<input type="text" size="1">
+			<input type="text" size="1">
+			<input type="text" size="1">
+		</div>
+		<!-- <div class="column">
+			<input type="text" size="1">
+			<input type="text" size="1">
+			<input type="text" size="1">
+		</div>
+		<div class="column">
+			<input type="text" size="1">
+			<input type="text" size="1">
+			<input type="text" size="1">
+		</div> -->
+		<script src=main.js></script>
 	</body>
 </html>
