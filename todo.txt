@@ -1,0 +1,10 @@
+UI
+- overwrite input when typing in textarea (?)
+- input.toUppercase
+
+UI::Solution
+- hover over word -> highlight cells that correspond to input
+
+Solution
+- find optimal solution (least words)
+- rank words in order of rarity (least to most?) (?)
